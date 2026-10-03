@@ -3,8 +3,8 @@ allowBuilds:
   lefthook: true
   unrs-resolver: true
 
-# Supply-chain guard: skip versions published less than 24h ago
-minimumReleaseAge: 1440
+# Supply-chain guard: skip versions published less than 7 days ago
+minimumReleaseAge: 10080
 
 # No patched release yet; both reach us only through Nuxt dev/build tooling,
 # never the shipped bundle. Drop each entry once Dependabot pulls a fix.
