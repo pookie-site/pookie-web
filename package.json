@@ -2,12 +2,25 @@
   "name": "pookie-web",
   "type": "module",
   "private": true,
+  "packageManager": "pnpm@12.8.1",
+  "engines": {
+    "node": ">=24"
+  },
   "scripts": {
     "build": "nuxt build",
     "dev": "nuxt dev",
     "generate": "nuxt generate",
     "preview": "nuxt preview",
-    "postinstall": "nuxt prepare"
+    "postinstall": "nuxt prepare",
+    "lint": "eslint .",
+    "lint:fix": "eslint . --fix",
+    "typecheck": "nuxt typecheck",
+    "test": "vitest run --passWithNoTests"
+  },
+  "commitlint": {
+    "extends": [
+      "@commitlint/config-conventional"
+    ]
   },
   "dependencies": {
     "nuxt": "^4.5.2",
@@ -15,13 +28,16 @@
     "vue-router": "^5.3.1"
   },
   "devDependencies": {
+    "@commitlint/cli": "^21.2.3",
+    "@commitlint/config-conventional": "^21.2.3",
     "@nuxt/eslint": "^1.17.0",
-    "@nuxt/test-utils": "^4.3.3",
+    "@nuxt/test-utils": "^4.3.2",
     "@vue/test-utils": "^2.5.1",
     "eslint": "^10.11.0",
     "happy-dom": "^20.14.5",
+    "lefthook": "^2.1.14",
     "typescript": "~6.0.3",
-    "vitest": "^5.0.3",
-    "vue-tsc": "^3.3.12"
+    "vitest": "^5.0.2",
+    "vue-tsc": "^3.3.11"
   }
 }
