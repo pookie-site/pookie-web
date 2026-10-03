@@ -1,0 +1,19 @@
+pre-commit:
+  parallel: true
+  jobs:
+    - name: eslint
+      glob: "*.{js,mjs,cjs,ts,mts,vue}"
+      run: pnpm exec eslint --fix {staged_files}
+      stage_fixed: true
+    - name: gitleaks
+      run: gitleaks git --pre-commit --staged --redact --no-banner
+
+commit-msg:
+  jobs:
+    - name: commitlint
+      run: pnpm exec commitlint --edit {1}
+
+pre-push:
+  jobs:
+    - name: typecheck
+      run: pnpm typecheck

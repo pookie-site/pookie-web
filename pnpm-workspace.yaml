@@ -1,3 +1,14 @@
 allowBuilds:
   esbuild: true
+  lefthook: true
   unrs-resolver: true
+
+# Supply-chain guard: skip versions published less than 24h ago
+minimumReleaseAge: 1440
+
+# No patched release yet; both reach us only through Nuxt dev/build tooling,
+# never the shipped bundle. Drop each entry once Dependabot pulls a fix.
+auditConfig:
+  ignoreGhsas:
+    - GHSA-86w9-cpqp-85rv # braces, via nitropack > globby (build-time globbing)
+    - GHSA-vfj7-8cjw-p6xm # node-forge, via listhen (local dev server certs)
