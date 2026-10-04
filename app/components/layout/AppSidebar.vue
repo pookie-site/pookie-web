@@ -5,6 +5,19 @@ const props = defineProps<{ loggedIn: boolean }>()
 
 const area = ref(0)
 
+// The backend clears its session cookie; then the shared session refetches as a guest.
+const loggingOut = ref(false)
+async function logout() {
+  loggingOut.value = true
+  try {
+    await $fetch('/api/auth/logout', { method: 'POST' })
+    await refreshNuxtData('session')
+  }
+  finally {
+    loggingOut.value = false
+  }
+}
+
 interface NavItem { label: string, to: string, icon?: string }
 
 const personal: NavItem[] = [
@@ -105,6 +118,18 @@ const sections = computed(() => props.loggedIn ? [personal] : [])
         v-bind="item"
       />
     </nav>
+
+    <!-- ponytail: xl only; the lg icon rail needs a logout icon from Figma first. -->
+    <UiButton
+      v-if="loggedIn"
+      ton="default"
+      size="medium"
+      :disabled="loggingOut"
+      class="w-full max-xl:hidden"
+      @click="logout"
+    >
+      Log out
+    </UiButton>
   </aside>
 </template>
 

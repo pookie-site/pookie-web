@@ -22,7 +22,7 @@ defineProps<{
       :src="image"
       :alt="title"
       loading="lazy"
-      class="absolute -inset-px size-[calc(100%+2px)] max-w-none object-cover"
+      class="absolute -inset-px size-[calc(100%+2px)] max-w-[none] object-cover"
     >
     <span
       v-if="badge"
