@@ -62,7 +62,7 @@ withDefaults(defineProps<{
           :key="row.id"
           class="odd:bg-table-row-background-odd even:bg-table-row-background-even hover:bg-table-row-background-hover [&>td]:py-s [&>td:first-child]:rounded-l-surface-xsmall [&>td:last-child]:rounded-r-surface-xsmall"
         >
-          <td class="w-full max-w-0 pl-s xl:w-auto xl:max-w-none xl:pl-m">
+          <td class="w-full max-w-0 pl-s xl:w-auto xl:max-w-[none] xl:pl-m">
             <div class="flex items-center gap-s">
               <img
                 :src="row.image"
