@@ -17,7 +17,7 @@ const top3 = computed(() => props.rank <= 3)
       class="absolute top-5 left-0 w-22 text-right font-heading text-[150px] leading-[150px] font-black tracking-[-9px]"
       :class="top3 ? 'text-top-list-rank-fill' : 'top-item__outline text-transparent'"
     >{{ rank }}</span>
-    <CatalogGameCard
+    <CatalogThumbnail
       :title="`${rank}. ${title}`"
       :image="image"
       :to="to"

@@ -25,7 +25,7 @@ withDefaults(defineProps<{
       class="h-[150px] w-full object-cover opacity-60"
     >
     <div class="grid grid-cols-3 gap-xs px-m pt-m">
-      <CatalogGameCard
+      <CatalogThumbnail
         v-for="game in games.slice(0, 6)"
         :key="game.title"
         :title="game.title"
