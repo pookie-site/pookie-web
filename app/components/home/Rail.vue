@@ -28,7 +28,7 @@ const page = (dir: 1 | -1) => scroller.value?.scrollBy({ left: dir * scroller.va
     </UiSectionHead>
     <div
       ref="scroller"
-      class="flex snap-x overflow-x-auto [scrollbar-width:none] *:shrink-0 *:snap-start"
+      class="flex snap-x overflow-x-auto overflow-y-hidden [scrollbar-width:none] *:shrink-0 *:snap-start"
       :class="rowClass"
     >
       <slot />
