@@ -6,4 +6,14 @@
     background-color: var(--color-background);
     color: var(--color-text-primary);
   }
+
+  /* Browser autofill paints inputs light with !important; an autofilled field is the
+     BaseInput Filled state. The inset shadow covers the UA background, which plain
+     background-color cannot override. */
+  /* :is() is forgiving, so a browser that lacks one of the pseudo-classes keeps the rule. */
+  input:is(:autofill, :-webkit-autofill) {
+    -webkit-text-fill-color: var(--color-input-field-value-default);
+    caret-color: var(--color-input-field-caret);
+    box-shadow: inset 0 0 0 100vmax var(--color-input-field-bg-filled);
+  }
 }
