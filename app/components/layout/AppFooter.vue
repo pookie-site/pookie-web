@@ -33,7 +33,8 @@ const toTop = () => window.scrollTo({ top: 0, behavior: 'smooth' })
       ><path d="M12 20V4M5 11l7-7 7 7" /></svg>
     </button>
 
-    <div class="mx-auto flex max-w-[1024px] flex-col gap-[22px] xl:max-w-[calc(1024px+272px)] xl:pl-[272px]">
+    <!-- From xl the columns line up with the page content: 8 + 248 sidebar + 72 gutter on the left, 72 on the right (minus the footer's own 16). -->
+    <div class="mx-auto flex max-w-[1024px] flex-col gap-[22px] xl:mx-0 xl:max-w-[none] xl:pr-[56px] xl:pl-[312px]">
       <div class="flex flex-col gap-6 xl:flex-row xl:items-start xl:justify-between">
         <button
           type="button"

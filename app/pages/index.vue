@@ -27,7 +27,7 @@ useSeoMeta({ title: 'Pookie' })
   >
     <HomeTicker :wins="feed.ticker" />
 
-    <div class="grid gap-xl md:grid-cols-2 xl:grid-cols-[minmax(0,1fr)_354px]">
+    <div class="grid gap-xl md:grid-cols-[minmax(0,1fr)_354px]">
       <HomePromoCard
         :title="feed.promo.title"
         :text="feed.promo.text"
