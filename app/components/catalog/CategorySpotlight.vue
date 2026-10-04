@@ -2,7 +2,9 @@
 import type { CollectionGame } from './CollectionCard.vue'
 
 // Figma category-spotlight (2057:24603): cover with a stat switch and a two-row game grid.
-// mob: cover on top, 3 columns; md: cover 240 on the left, 4 columns and arrows; xl: cover 320, 5 columns.
+// mob: cover on top, 3 columns; md: cover 240 on the left with arrows; xl: cover 320.
+// The cover keeps its width; when the block grows, the grid gains columns instead of
+// taller cards (one column per ~120px, see the container queries), always two rows.
 withDefaults(defineProps<{
   title: string
   cover: string
@@ -52,17 +54,19 @@ defineEmits<{ prev: [], next: [] }>()
         class="max-md:hidden"
         @click="$emit('prev')"
       />
-      <div
-        role="tabpanel"
-        class="spotlight__grid grid min-w-0 flex-1 grid-cols-3 gap-xs md:grid-cols-4 md:gap-2.5 xl:grid-cols-5"
-      >
-        <CatalogThumbnail
-          v-for="game in games"
-          :key="game.title"
-          :title="game.title"
-          :image="game.image"
-          class="w-full"
-        />
+      <div class="@container min-w-0 flex-1">
+        <div
+          role="tabpanel"
+          class="spotlight__grid grid grid-cols-3 gap-xs md:grid-cols-4 md:gap-2.5 xl:grid-cols-5"
+        >
+          <CatalogThumbnail
+            v-for="(game, i) in games"
+            :key="`${i}-${game.title}`"
+            :title="game.title"
+            :image="game.image"
+            class="w-full"
+          />
+        </div>
       </div>
       <UiIconButton
         icon="chevron-right"
@@ -75,7 +79,7 @@ defineEmits<{ prev: [], next: [] }>()
 </template>
 
 <style scoped>
-/* Always two rows: hide what does not fit the column count. */
+/* Always two rows: hide what does not fit the column count (3 mob, 4 md, 5 xl as in Figma). */
 .spotlight__grid > :nth-child(n + 7) {
   display: none;
 }
@@ -98,5 +102,57 @@ defineEmits<{ prev: [], next: [] }>()
   .spotlight__grid > :nth-child(n + 11) {
     display: none;
   }
+}
+
+/* Wider than the 1440 frame: cards stay 110px (their size at 1440) and a column is added
+   per 120px of grid (card plus the 10px gap); the remainder spreads into the gaps, so the
+   block keeps its height. */
+
+@media (width >= 80rem) {
+  @container (width >= 590px) {
+    .spotlight__grid { grid-template-columns: repeat(5, 110px); justify-content: space-between; }
+  }
+}
+
+@container (width >= 710px) {
+  .spotlight__grid { grid-template-columns: repeat(6, 110px); justify-content: space-between; }
+  .spotlight__grid > :nth-child(n + 11) { display: block; }
+  .spotlight__grid > :nth-child(n + 13) { display: none; }
+}
+
+@container (width >= 830px) {
+  .spotlight__grid { grid-template-columns: repeat(7, 110px); justify-content: space-between; }
+  .spotlight__grid > :nth-child(n + 13) { display: block; }
+  .spotlight__grid > :nth-child(n + 15) { display: none; }
+}
+
+@container (width >= 950px) {
+  .spotlight__grid { grid-template-columns: repeat(8, 110px); justify-content: space-between; }
+  .spotlight__grid > :nth-child(n + 15) { display: block; }
+  .spotlight__grid > :nth-child(n + 17) { display: none; }
+}
+
+@container (width >= 1070px) {
+  .spotlight__grid { grid-template-columns: repeat(9, 110px); justify-content: space-between; }
+  .spotlight__grid > :nth-child(n + 17) { display: block; }
+  .spotlight__grid > :nth-child(n + 19) { display: none; }
+}
+
+@container (width >= 1190px) {
+  .spotlight__grid { grid-template-columns: repeat(10, 110px); justify-content: space-between; }
+  .spotlight__grid > :nth-child(n + 19) { display: block; }
+  .spotlight__grid > :nth-child(n + 21) { display: none; }
+}
+
+@container (width >= 1310px) {
+  .spotlight__grid { grid-template-columns: repeat(11, 110px); justify-content: space-between; }
+  .spotlight__grid > :nth-child(n + 21) { display: block; }
+  .spotlight__grid > :nth-child(n + 23) { display: none; }
+}
+
+@container (width >= 1430px) {
+  .spotlight__grid { grid-template-columns: repeat(12, 110px); justify-content: space-between; }
+  .spotlight__grid > :nth-child(n + 23) { display: block; }
+  .spotlight__grid > :nth-child(n + 25) { display: none; }
 }
 </style>
