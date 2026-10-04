@@ -1,16 +1,17 @@
 <script setup lang="ts">
 // Page shell. Breakpoints from the handoff: mob < md (bottom nav), md tablet (no sidebar,
 // no bottom nav), lg icon-rail sidebar, xl full sidebar with 1024px content.
-// ponytail: the logged-in flag and balance are local state until auth and wallet come from the API (session D).
-const loggedIn = useState('auth:logged-in', () => false)
+const { data: session } = await useSession()
+const player = computed(() => session.value.player)
+const loggedIn = computed(() => !!player.value)
 </script>
 
 <template>
   <div class="min-h-dvh max-md:pb-16">
     <LayoutAppHeader
       :logged-in="loggedIn"
-      balance="180.88"
-      coins="5 800.45"
+      :balance="player?.balance"
+      :coins="player?.coins"
     />
     <div class="flex gap-6 lg:p-xs lg:pr-0">
       <LayoutAppSidebar
@@ -26,7 +27,7 @@ const loggedIn = useState('auth:logged-in', () => false)
     <LayoutAppFooter />
     <LayoutBottomNav
       :variant="loggedIn ? 'wheel' : 'simple'"
-      :rewards="14"
+      :rewards="player?.rewards"
       class="md:hidden"
     />
   </div>
