@@ -34,7 +34,46 @@ export const SpotlightSchema = z.object({
   tabs: z.array(z.object({ label: z.string(), games: z.array(GameSchema) })).min(1),
 })
 
+export const AccentToneSchema = z.enum(['plum', 'dusk', 'twilight', 'ocean', 'ember', 'bronze', 'violet', 'nebula'])
+
+export const TickerWinSchema = z.object({
+  id: z.string(),
+  user: z.string(),
+  amount: z.string(),
+  image: z.string(),
+  to: z.string(),
+})
+
+export const PromoSchema = z.object({
+  title: z.string(),
+  text: z.string(),
+  image: z.string(),
+  action: z.string(),
+  to: z.string(),
+})
+
+export const StorySchema = z.object({
+  id: z.string(),
+  label: z.string(),
+  image: z.string(),
+  to: z.string(),
+})
+
+export const CategoryCardSchema = z.object({
+  id: z.string(),
+  title: z.string(),
+  count: z.string(),
+  action: z.string(),
+  to: z.string(),
+  tone: AccentToneSchema,
+  art: z.array(z.string()).length(3),
+})
+
 export const HomeFeedSchema = z.object({
+  ticker: z.array(TickerWinSchema),
+  promo: PromoSchema,
+  stories: z.array(StorySchema),
+  categories: z.array(CategoryCardSchema),
   popular: z.array(GameSchema),
   top10: z.array(GameSchema),
   providers: z.array(ProviderSchema),
@@ -62,5 +101,8 @@ export const WinRowSchema = z.object({
 export const WinsSchema = z.array(WinRowSchema)
 
 export type Game = z.infer<typeof GameSchema>
+export type TickerWin = z.infer<typeof TickerWinSchema>
+export type Story = z.infer<typeof StorySchema>
+export type CategoryCard = z.infer<typeof CategoryCardSchema>
 export type HomeFeed = z.infer<typeof HomeFeedSchema>
 export type WinsTab = z.infer<typeof WinsTabSchema>

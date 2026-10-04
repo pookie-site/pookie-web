@@ -5,7 +5,7 @@ withDefaults(defineProps<{
   title: string
   showAllTo?: string
   rowClass?: string
-}>(), { showAllTo: undefined, rowClass: 'gap-s' })
+}>(), { showAllTo: undefined, rowClass: 'gap-xs md:gap-s' })
 
 const scroller = useTemplateRef('scroller')
 const page = (dir: 1 | -1) => scroller.value?.scrollBy({ left: dir * scroller.value.clientWidth, behavior: 'smooth' })

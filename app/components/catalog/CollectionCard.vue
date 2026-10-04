@@ -1,6 +1,6 @@
 <script setup lang="ts">
 // Figma collection-card (2025:18128): cover banner, 2x3 game preview, title, count, See all.
-// Collections rail: `flex justify-[safe_center] overflow-x-auto` so one or two cards centre.
+// Collections rail: `flex justify-center-safe overflow-x-auto` so one or two cards centre.
 export interface CollectionGame {
   title: string
   image: string
