@@ -56,7 +56,7 @@ defineEmits<{ prev: [], next: [] }>()
         role="tabpanel"
         class="spotlight__grid grid min-w-0 flex-1 grid-cols-3 gap-xs md:grid-cols-4 md:gap-2.5 xl:grid-cols-5"
       >
-        <CatalogGameCard
+        <CatalogThumbnail
           v-for="game in games"
           :key="game.title"
           :title="game.title"

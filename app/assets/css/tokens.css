@@ -182,6 +182,65 @@
   --brand-status-info: #53FFFD;
   --brand-status-success: #00DF80;
   --brand-status-warning: #FFD21E;
+  /* brand: accent / primary alpha */
+  --brand-accent-primary-alpha-30: rgba(206, 240, 56, 0.3);
+  /* brand: base / dark alpha */
+  --brand-base-dark-alpha-80: rgba(6, 12, 19, 0.8);
+  /* brand: category-palette / 1 */
+  --brand-category-palette-1-bg: #041E1B;
+  --brand-category-palette-1-border-end: #0C3F28;
+  --brand-category-palette-1-border-start: #054327;
+  --brand-category-palette-1-fade: rgba(8, 47, 33, 0);
+  --brand-category-palette-1-glow: #27AC54;
+  /* brand: category-palette / 2 */
+  --brand-category-palette-2-bg: #081937;
+  --brand-category-palette-2-border-end: #081937;
+  --brand-category-palette-2-border-start: #245798;
+  --brand-category-palette-2-fade: rgba(21, 17, 81, 0);
+  --brand-category-palette-2-glow: #1081D4;
+  /* brand: category-palette / 3 */
+  --brand-category-palette-3-bg: #270536;
+  --brand-category-palette-3-border-end: #270536;
+  --brand-category-palette-3-border-start: #621E81;
+  --brand-category-palette-3-fade: rgba(61, 17, 81, 0);
+  --brand-category-palette-3-glow: #9631C8;
+  /* brand: category-palette / 4 */
+  --brand-category-palette-4-bg: #1B0B02;
+  --brand-category-palette-4-border-end: #311C0B;
+  --brand-category-palette-4-border-start: #523318;
+  --brand-category-palette-4-fade: rgba(98, 67, 40, 0);
+  --brand-category-palette-4-glow: #96602D;
+  /* brand: category-palette / 5 */
+  --brand-category-palette-5-bg: #192204;
+  --brand-category-palette-5-border-end: #192204;
+  --brand-category-palette-5-border-start: #365C1A;
+  --brand-category-palette-5-fade: rgba(41, 69, 23, 0);
+  --brand-category-palette-5-glow: #42962D;
+  /* brand: category-palette / 6 */
+  --brand-category-palette-6-bg: #160316;
+  --brand-category-palette-6-border-end: #3F1225;
+  --brand-category-palette-6-border-start: #481B27;
+  --brand-category-palette-6-fade: rgba(98, 50, 40, 0);
+  --brand-category-palette-6-glow: #B94545;
+  /* brand: category-palette / 7 */
+  --brand-category-palette-7-bg: #041E1B;
+  --brand-category-palette-7-border-end: #082D20;
+  --brand-category-palette-7-border-start: #0D4229;
+  --brand-category-palette-7-fade: rgba(8, 47, 33, 0);
+  --brand-category-palette-7-glow: #27AC54;
+  /* brand: category-palette / 8 */
+  --brand-category-palette-8-bg: #0C1423;
+  --brand-category-palette-8-border-end: #102738;
+  --brand-category-palette-8-border-start: #1E445D;
+  --brand-category-palette-8-fade: rgba(12, 25, 35, 0);
+  --brand-category-palette-8-glow: #1A5A78;
+  /* brand: category-palette / 9 */
+  --brand-category-palette-9-bg: #1E202B;
+  --brand-category-palette-9-border-end: #2E3750;
+  --brand-category-palette-9-border-start: #3B4863;
+  --brand-category-palette-9-fade: rgba(27, 47, 70, 0);
+  --brand-category-palette-9-glow: #6A7B9D;
+  --brand-category-palette-9-glow-2: #98ACD4;
 }
 
 @theme static {
@@ -382,6 +441,65 @@
   --color-text-quaternary: var(--brand-base-light-800);
   --color-text-secondary: var(--brand-base-light-400);
   --color-text-tertiary: var(--brand-base-light-600);
+  /* alias: glow */
+  --color-glow-brand: var(--brand-accent-primary-alpha-30);
+  /* alias: surface category / 1 */
+  --color-surface-category-1-bg: var(--brand-category-palette-1-bg);
+  --color-surface-category-1-border-end: var(--brand-category-palette-1-border-end);
+  --color-surface-category-1-border-start: var(--brand-category-palette-1-border-start);
+  --color-surface-category-1-fade: var(--brand-category-palette-1-fade);
+  --color-surface-category-1-glow: var(--brand-category-palette-1-glow);
+  /* alias: surface category / 2 */
+  --color-surface-category-2-bg: var(--brand-category-palette-2-bg);
+  --color-surface-category-2-border-end: var(--brand-category-palette-2-border-end);
+  --color-surface-category-2-border-start: var(--brand-category-palette-2-border-start);
+  --color-surface-category-2-fade: var(--brand-category-palette-2-fade);
+  --color-surface-category-2-glow: var(--brand-category-palette-2-glow);
+  /* alias: surface category / 3 */
+  --color-surface-category-3-bg: var(--brand-category-palette-3-bg);
+  --color-surface-category-3-border-end: var(--brand-category-palette-3-border-end);
+  --color-surface-category-3-border-start: var(--brand-category-palette-3-border-start);
+  --color-surface-category-3-fade: var(--brand-category-palette-3-fade);
+  --color-surface-category-3-glow: var(--brand-category-palette-3-glow);
+  /* alias: surface category / 4 */
+  --color-surface-category-4-bg: var(--brand-category-palette-4-bg);
+  --color-surface-category-4-border-end: var(--brand-category-palette-4-border-end);
+  --color-surface-category-4-border-start: var(--brand-category-palette-4-border-start);
+  --color-surface-category-4-fade: var(--brand-category-palette-4-fade);
+  --color-surface-category-4-glow: var(--brand-category-palette-4-glow);
+  /* alias: surface category / 5 */
+  --color-surface-category-5-bg: var(--brand-category-palette-5-bg);
+  --color-surface-category-5-border-end: var(--brand-category-palette-5-border-end);
+  --color-surface-category-5-border-start: var(--brand-category-palette-5-border-start);
+  --color-surface-category-5-fade: var(--brand-category-palette-5-fade);
+  --color-surface-category-5-glow: var(--brand-category-palette-5-glow);
+  /* alias: surface category / 6 */
+  --color-surface-category-6-bg: var(--brand-category-palette-6-bg);
+  --color-surface-category-6-border-end: var(--brand-category-palette-6-border-end);
+  --color-surface-category-6-border-start: var(--brand-category-palette-6-border-start);
+  --color-surface-category-6-fade: var(--brand-category-palette-6-fade);
+  --color-surface-category-6-glow: var(--brand-category-palette-6-glow);
+  /* alias: surface category / 7 */
+  --color-surface-category-7-bg: var(--brand-category-palette-7-bg);
+  --color-surface-category-7-border-end: var(--brand-category-palette-7-border-end);
+  --color-surface-category-7-border-start: var(--brand-category-palette-7-border-start);
+  --color-surface-category-7-fade: var(--brand-category-palette-7-fade);
+  --color-surface-category-7-glow: var(--brand-category-palette-7-glow);
+  /* alias: surface category / 8 */
+  --color-surface-category-8-bg: var(--brand-category-palette-8-bg);
+  --color-surface-category-8-border-end: var(--brand-category-palette-8-border-end);
+  --color-surface-category-8-border-start: var(--brand-category-palette-8-border-start);
+  --color-surface-category-8-fade: var(--brand-category-palette-8-fade);
+  --color-surface-category-8-glow: var(--brand-category-palette-8-glow);
+  /* alias: surface category / 9 */
+  --color-surface-category-9-bg: var(--brand-category-palette-9-bg);
+  --color-surface-category-9-border-end: var(--brand-category-palette-9-border-end);
+  --color-surface-category-9-border-start: var(--brand-category-palette-9-border-start);
+  --color-surface-category-9-fade: var(--brand-category-palette-9-fade);
+  --color-surface-category-9-glow: var(--brand-category-palette-9-glow);
+  --color-surface-category-9-glow-2: var(--brand-category-palette-9-glow-2);
+  /* alias: surface overlay / dark */
+  --color-surface-overlay-dark-80: var(--brand-base-dark-alpha-80);
 
   /* mapped: accent-surface / bronze */
   --color-accent-surface-bronze-end: var(--color-surface-gradient-bronze-end);
@@ -892,13 +1010,13 @@
   --color-collection-card-count: var(--color-text-tertiary);
   --color-collection-card-link: var(--color-text-brand);
   --color-collection-card-title: var(--color-text-primary);
-  /* mapped: game-card */
-  --color-game-card-background: var(--color-surface-solid-s3);
-  /* mapped: game-card / badge */
-  --color-game-card-badge-background: var(--color-surface-accent-primary);
-  --color-game-card-badge-text: var(--color-text-on-accent);
-  /* mapped: game-card */
-  --color-game-card-border: var(--color-border-b2);
+  /* mapped: thumbnail */
+  --color-thumbnail-background: var(--color-surface-solid-s3);
+  /* mapped: thumbnail / badge */
+  --color-thumbnail-badge-background: var(--color-surface-accent-primary);
+  --color-thumbnail-badge-text: var(--color-text-on-accent);
+  /* mapped: thumbnail */
+  --color-thumbnail-border: var(--color-border-b2);
   /* mapped: icon-button / background */
   --color-icon-button-background-active: var(--color-surface-overlay-light-30);
   --color-icon-button-background-default: var(--color-surface-overlay-light-10);
@@ -1117,6 +1235,174 @@
   --color-xp-bar-fill: var(--color-surface-accent-secondary);
   --color-xp-bar-marker: var(--color-surface-accent-primary);
   --color-xp-bar-track: var(--color-surface-solid-s2);
+  /* mapped: game-category-item / 1 / bg */
+  --color-game-category-item-1-bg-active: var(--color-surface-category-1-bg);
+  --color-game-category-item-1-bg-default: var(--color-surface-category-1-bg);
+  /* mapped: game-category-item / 1 / border-end */
+  --color-game-category-item-1-border-end-active: var(--color-surface-category-1-border-end);
+  /* mapped: game-category-item / 1 / border-start */
+  --color-game-category-item-1-border-start-active: var(--color-surface-category-1-border-start);
+  /* mapped: game-category-item / 1 / glow-fade */
+  --color-game-category-item-1-glow-fade-default: var(--color-surface-category-1-fade);
+  /* mapped: game-category-item / 1 / glow */
+  --color-game-category-item-1-glow-active: var(--color-surface-category-1-glow);
+  --color-game-category-item-1-glow-default: var(--color-surface-category-1-glow);
+  /* mapped: game-category-item / 2 / bg */
+  --color-game-category-item-2-bg-active: var(--color-surface-category-2-bg);
+  --color-game-category-item-2-bg-default: var(--color-surface-category-2-bg);
+  /* mapped: game-category-item / 2 / border-end */
+  --color-game-category-item-2-border-end-active: var(--color-surface-category-2-border-end);
+  /* mapped: game-category-item / 2 / border-start */
+  --color-game-category-item-2-border-start-active: var(--color-surface-category-2-border-start);
+  /* mapped: game-category-item / 2 / glow-fade */
+  --color-game-category-item-2-glow-fade-default: var(--color-surface-category-2-fade);
+  /* mapped: game-category-item / 2 / glow */
+  --color-game-category-item-2-glow-active: var(--color-surface-category-2-glow);
+  --color-game-category-item-2-glow-default: var(--color-surface-category-2-glow);
+  /* mapped: game-category-item / 3 / bg */
+  --color-game-category-item-3-bg-active: var(--color-surface-category-3-bg);
+  --color-game-category-item-3-bg-default: var(--color-surface-category-3-bg);
+  /* mapped: game-category-item / 3 / border-end */
+  --color-game-category-item-3-border-end-active: var(--color-surface-category-3-border-end);
+  /* mapped: game-category-item / 3 / border-start */
+  --color-game-category-item-3-border-start-active: var(--color-surface-category-3-border-start);
+  /* mapped: game-category-item / 3 / glow-fade */
+  --color-game-category-item-3-glow-fade-default: var(--color-surface-category-3-fade);
+  /* mapped: game-category-item / 3 / glow */
+  --color-game-category-item-3-glow-active: var(--color-surface-category-3-glow);
+  --color-game-category-item-3-glow-default: var(--color-surface-category-3-glow);
+  /* mapped: game-category-item / 4 / bg */
+  --color-game-category-item-4-bg-active: var(--color-surface-category-4-bg);
+  --color-game-category-item-4-bg-default: var(--color-surface-category-4-bg);
+  /* mapped: game-category-item / 4 / border-end */
+  --color-game-category-item-4-border-end-active: var(--color-surface-category-4-border-end);
+  /* mapped: game-category-item / 4 / border-start */
+  --color-game-category-item-4-border-start-active: var(--color-surface-category-4-border-start);
+  /* mapped: game-category-item / 4 / glow-fade */
+  --color-game-category-item-4-glow-fade-default: var(--color-surface-category-4-fade);
+  /* mapped: game-category-item / 4 / glow */
+  --color-game-category-item-4-glow-active: var(--color-surface-category-4-glow);
+  --color-game-category-item-4-glow-default: var(--color-surface-category-4-glow);
+  /* mapped: game-category-item / 5 / bg */
+  --color-game-category-item-5-bg-active: var(--color-surface-category-5-bg);
+  --color-game-category-item-5-bg-default: var(--color-surface-category-5-bg);
+  /* mapped: game-category-item / 5 / border-end */
+  --color-game-category-item-5-border-end-active: var(--color-surface-category-5-border-end);
+  /* mapped: game-category-item / 5 / border-start */
+  --color-game-category-item-5-border-start-active: var(--color-surface-category-5-border-start);
+  /* mapped: game-category-item / 5 / glow-fade */
+  --color-game-category-item-5-glow-fade-default: var(--color-surface-category-5-fade);
+  /* mapped: game-category-item / 5 / glow */
+  --color-game-category-item-5-glow-active: var(--color-surface-category-5-glow);
+  --color-game-category-item-5-glow-default: var(--color-surface-category-5-glow);
+  /* mapped: game-category-item / 6 / bg */
+  --color-game-category-item-6-bg-active: var(--color-surface-category-6-bg);
+  --color-game-category-item-6-bg-default: var(--color-surface-category-6-bg);
+  /* mapped: game-category-item / 6 / border-end */
+  --color-game-category-item-6-border-end-active: var(--color-surface-category-6-border-end);
+  /* mapped: game-category-item / 6 / border-start */
+  --color-game-category-item-6-border-start-active: var(--color-surface-category-6-border-start);
+  /* mapped: game-category-item / 6 / glow-fade */
+  --color-game-category-item-6-glow-fade-default: var(--color-surface-category-6-fade);
+  /* mapped: game-category-item / 6 / glow */
+  --color-game-category-item-6-glow-active: var(--color-surface-category-6-glow);
+  --color-game-category-item-6-glow-default: var(--color-surface-category-6-glow);
+  /* mapped: game-category-item / 7 / bg */
+  --color-game-category-item-7-bg-active: var(--color-surface-category-7-bg);
+  --color-game-category-item-7-bg-default: var(--color-surface-category-7-bg);
+  /* mapped: game-category-item / 7 / border-end */
+  --color-game-category-item-7-border-end-active: var(--color-surface-category-7-border-end);
+  /* mapped: game-category-item / 7 / border-start */
+  --color-game-category-item-7-border-start-active: var(--color-surface-category-7-border-start);
+  /* mapped: game-category-item / 7 / glow-fade */
+  --color-game-category-item-7-glow-fade-default: var(--color-surface-category-7-fade);
+  /* mapped: game-category-item / 7 / glow */
+  --color-game-category-item-7-glow-active: var(--color-surface-category-7-glow);
+  --color-game-category-item-7-glow-default: var(--color-surface-category-7-glow);
+  /* mapped: game-category-item / 8 / bg */
+  --color-game-category-item-8-bg-active: var(--color-surface-category-8-bg);
+  --color-game-category-item-8-bg-default: var(--color-surface-category-8-bg);
+  /* mapped: game-category-item / 8 / border-end */
+  --color-game-category-item-8-border-end-active: var(--color-surface-category-8-border-end);
+  /* mapped: game-category-item / 8 / border-start */
+  --color-game-category-item-8-border-start-active: var(--color-surface-category-8-border-start);
+  /* mapped: game-category-item / 8 / glow-fade */
+  --color-game-category-item-8-glow-fade-default: var(--color-surface-category-8-fade);
+  /* mapped: game-category-item / 8 / glow */
+  --color-game-category-item-8-glow-active: var(--color-surface-category-8-glow);
+  --color-game-category-item-8-glow-default: var(--color-surface-category-8-glow);
+  /* mapped: game-category-item / 9 / bg */
+  --color-game-category-item-9-bg-active: var(--color-surface-category-9-bg);
+  --color-game-category-item-9-bg-default: var(--color-surface-category-9-bg);
+  /* mapped: game-category-item / 9 / border-end */
+  --color-game-category-item-9-border-end-active: var(--color-surface-category-9-border-end);
+  /* mapped: game-category-item / 9 / border-start */
+  --color-game-category-item-9-border-start-active: var(--color-surface-category-9-border-start);
+  /* mapped: game-category-item / 9 / glow-fade */
+  --color-game-category-item-9-glow-fade-default: var(--color-surface-category-9-fade);
+  /* mapped: game-category-item / 9 / glow */
+  --color-game-category-item-9-glow-active: var(--color-surface-category-9-glow-2);
+  --color-game-category-item-9-glow-default: var(--color-surface-category-9-glow);
+  /* mapped: header / balance */
+  --color-header-balance-background-end: var(--color-surface-overlay-transparent);
+  --color-header-balance-background-start: var(--color-surface-solid-s4);
+  --color-header-balance-coins: var(--color-text-accent-primary);
+  --color-header-balance-indicator: var(--color-alert-success);
+  --color-header-balance-value: var(--color-text-primary);
+  /* mapped: nav / bottom */
+  --color-nav-bottom-background: var(--color-background);
+  /* mapped: nav / bottom / badge */
+  --color-nav-bottom-badge-background: var(--color-alert-error);
+  --color-nav-bottom-badge-text: var(--color-text-primary);
+  /* mapped: nav / bottom / bar */
+  --color-nav-bottom-bar-background: var(--color-surface-solid-s2);
+  --color-nav-bottom-bar-border-end: var(--color-border-b1);
+  --color-nav-bottom-bar-border-start: var(--color-border-b3);
+  --color-nav-bottom-bar-glow-end: var(--color-surface-overlay-transparent);
+  --color-nav-bottom-bar-glow-start: var(--color-surface-overlay-light-30);
+  /* mapped: nav / bottom / item / background */
+  --color-nav-bottom-item-background-active: var(--color-surface-overlay-light-15);
+  /* mapped: nav / bottom / item / label */
+  --color-nav-bottom-item-label-active: var(--color-text-primary);
+  --color-nav-bottom-item-label-default: var(--color-text-secondary);
+  /* mapped: nav / footer */
+  --color-nav-footer-bullet: var(--color-text-secondary);
+  /* mapped: nav / footer / button */
+  --color-nav-footer-button-background: var(--color-action-default-slate-600);
+  --color-nav-footer-button-icon: var(--color-text-primary);
+  /* mapped: nav / footer */
+  --color-nav-footer-link: var(--color-text-tertiary);
+  --color-nav-footer-social-icon: var(--color-surface-overlay-light-70);
+  --color-nav-footer-text: var(--color-text-primary);
+  --color-nav-footer-title: var(--color-text-secondary);
+  /* mapped: nav / header */
+  --color-nav-header-icon: var(--color-icon-base-primary);
+  --color-nav-header-link: var(--color-text-primary);
+  --color-nav-header-logo: var(--color-text-primary);
+  /* mapped: nav / icon-button / background */
+  --color-nav-icon-button-background-default: var(--color-surface-overlay-light-7);
+  --color-nav-icon-button-background-hover: var(--color-surface-overlay-light-15);
+  /* mapped: nav / icon-button / border */
+  --color-nav-icon-button-border-default: var(--color-surface-overlay-light-7);
+  /* mapped: nav / side-menu / banner */
+  --color-nav-side-menu-banner-background: var(--color-surface-solid-s3);
+  --color-nav-side-menu-banner-border-end: var(--color-border-b4);
+  --color-nav-side-menu-banner-border-start: var(--color-border-b1);
+  --color-nav-side-menu-banner-title: var(--color-text-primary);
+  /* mapped: nav / side-menu / section */
+  --color-nav-side-menu-section-background: var(--color-surface-solid-s3);
+  /* mapped: play-button */
+  --color-play-button-background: var(--color-surface-accent-primary);
+  --color-play-button-border: var(--color-action-brand-lime-50);
+  --color-play-button-glow: var(--color-action-brand-lime-100-a80);
+  --color-play-button-icon: var(--color-text-on-accent);
+  /* mapped: thumbnail / border */
+  --color-thumbnail-border-hover: var(--color-border-brand);
+  /* mapped: thumbnail / glow */
+  --color-thumbnail-glow-hover: var(--color-glow-brand);
+  /* mapped: thumbnail / overlay */
+  --color-thumbnail-overlay-background: var(--color-surface-overlay-dark-80);
+  --color-thumbnail-overlay-title: var(--color-text-primary);
 
   /* Typography: font families */
   --font-accent: 'Catamaran', sans-serif;

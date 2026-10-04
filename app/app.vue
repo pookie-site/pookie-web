@@ -110,13 +110,15 @@ const wins: WinRow[] = [
           </template>
         </UiSectionHead>
         <div class="flex gap-xs overflow-x-auto">
-          <CatalogGameCard
-            v-for="n in 4"
-            :key="n"
-            title="Game"
+          <CatalogThumbnail
+            v-for="(w, n) in [198, 171, 135, 122, 80]"
+            :key="w"
+            title="Great Rhino Megaways"
             :image="cover"
-            :badge="n === 1 ? 'New' : undefined"
-            class="w-[135px]"
+            :badge="n === 0 ? 'New' : undefined"
+            to="/"
+            class="shrink-0"
+            :style="{ width: `${w}px` }"
           />
         </div>
       </section>
