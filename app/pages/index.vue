@@ -88,7 +88,7 @@ useSeoMeta({ title: 'Pookie' })
     <HomeRail
       title="Top 10 this week"
       show-all-to="/games/top"
-      row-class="gap-xs"
+      row-class="gap-2xs md:gap-xs"
     >
       <template #icon>
         <img
