@@ -9,6 +9,7 @@ const tons: ButtonTon[] = ['brand', 'default', 'accent', 'warning', 'successful'
 const tones: AccentTone[] = ['plum', 'dusk', 'twilight', 'ocean', 'ember', 'bronze', 'violet', 'nebula']
 const cover = 'data:image/svg+xml,%3Csvg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 3 4"%3E%3Crect width="3" height="4" fill="%23294163"/%3E%3C/svg%3E'
 const activeTab = ref(0)
+const loggedIn = useState('auth:logged-in', () => false)
 const spotlightTab = ref(0)
 const games = Array.from({ length: 10 }, (_, i) => ({ title: `Game ${i + 1}`, image: cover }))
 const wins: WinRow[] = [
@@ -19,9 +20,15 @@ const wins: WinRow[] = [
 </script>
 
 <template>
-  <div>
-    <NuxtRouteAnnouncer />
-    <main class="flex flex-col gap-3xl p-m">
+  <NuxtRouteAnnouncer />
+  <NuxtLayout>
+    <div class="flex flex-col gap-3xl">
+      <label class="flex items-center gap-xs type-body-regular-sm text-text-secondary">
+        <input
+          v-model="loggedIn"
+          type="checkbox"
+        > Logged in (shell preview)
+      </label>
       <h1 class="type-heading-bold-h1">
         Pookie components
       </h1>
@@ -223,6 +230,6 @@ const wins: WinRow[] = [
       />
 
       <HomeWinsTable :rows="wins" />
-    </main>
-  </div>
+    </div>
+  </NuxtLayout>
 </template>
