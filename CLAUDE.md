@@ -63,7 +63,15 @@ Features: auth, catalog, game, cashier, profile, limits, rewards, promo, home.
 
 ## Design
 
-Figma file "Pookie — Rewards", key `OLcCPoHbYaBmXZv5PcdDhp`. Design runs in parallel with code; screens without a layout get a wireframe built from base components and are replaced later. Figma MCP returns React + Tailwind; always convert it to a Vue SFC.
+Design system and home page: Figma file key `byr5XCp0YkwOBy6cQXS8wA`, page "working". Rewards and XP: file "Pookie — Rewards", key `OLcCPoHbYaBmXZv5PcdDhp`. Design runs in parallel with code; screens without a layout get a wireframe built from base components and are replaced later. Figma MCP returns React + Tailwind; always convert it to a Vue SFC.
+
+Tokens live in `app/assets/css/tokens.css`, generated from the Figma variables; never edit it by hand, re-export it instead.
+
+- Chain: Mapped -> Alias -> Brand. Components use Mapped tokens only (`bg-button-primary-brand-background-default`, `text-table-cell-title`). Layout code may use Alias (`bg-surface-solid-s2`). Brand (`--brand-*`) is never used directly.
+- Only Pookie tokens exist as colours and font sizes: the default Tailwind palette and `text-*` sizes are removed.
+- Spacing (`p-m`, `gap-xl`), radius (`rounded-surface-small`) and font sizes switch by breakpoint: mob below `md`, tablet from `md`, desktop from `xl`.
+- Text styles are utilities named after the Figma style: `type-heading-bold-h1`, `type-body-regular-m`, `type-table-header`.
+- Fonts (Catamaran, Hind Madurai, Ubuntu) are self-hosted by `@nuxt/fonts`.
 
 ## Definition of Done
 
