@@ -216,7 +216,7 @@ const wins: WinRow[] = [
       />
     </section>
 
-    <section class="flex justify-[safe_center] gap-m overflow-x-auto">
+    <section class="flex justify-center-safe gap-m overflow-x-auto">
       <CatalogCollectionCard
         title="Game collection"
         count="48 games"

@@ -1,9 +1,11 @@
 <script setup lang="ts">
 import type { WinsTab } from '#shared/contracts/home'
 
-// Home page (Figma 2015:16360 guest, 2026:30590 logged in). Session D2 adds the ticker,
-// hero, stories and categories 50/50 above the rails.
+// Home page (Figma 2015:16360 guest, 2026:30590 logged in). The hero pairs the promo with
+// the XP card for players and the sign-up form for guests.
 const { data: feed } = await useHomeFeed()
+const { data: session } = await useSession()
+const player = computed(() => session.value.player)
 
 const spotlightTab = ref(0)
 const spotlightGames = computed(() => feed.value?.spotlight.tabs[spotlightTab.value]?.games ?? [])
@@ -21,8 +23,47 @@ useSeoMeta({ title: 'Pookie' })
 <template>
   <div
     v-if="feed"
-    class="flex flex-col gap-2xl"
+    class="flex flex-col gap-xl xl:gap-2xl"
   >
+    <HomeTicker :wins="feed.ticker" />
+
+    <div class="grid gap-xl md:grid-cols-2 xl:grid-cols-[minmax(0,1fr)_354px]">
+      <HomePromoCard
+        :title="feed.promo.title"
+        :text="feed.promo.text"
+        :image="feed.promo.image"
+        :action="feed.promo.action"
+        :to="feed.promo.to"
+        :note="player ? `${player.coins} coins` : undefined"
+        class="min-h-[170px]"
+      />
+      <RewardsXpCard
+        v-if="player"
+        :name="player.name"
+      />
+      <div
+        v-else
+        class="rounded-surface-large border border-promo-card-border bg-promo-card-background p-m md:p-xl"
+      >
+        <AuthSignUpForm />
+      </div>
+    </div>
+
+    <HomeStories :stories="feed.stories" />
+
+    <div class="grid gap-s md:grid-cols-2 md:gap-m">
+      <CatalogCategoryCard
+        v-for="category in feed.categories"
+        :key="category.id"
+        :title="category.title"
+        :count="category.count"
+        :action="category.action"
+        :to="category.to"
+        :tone="category.tone"
+        :art="category.art"
+      />
+    </div>
+
     <HomeRail
       title="Popular"
       show-all-to="/games/popular"
@@ -40,7 +81,7 @@ useSeoMeta({ title: 'Pookie' })
         :image="game.image"
         :badge="game.badge"
         :to="game.to"
-        class="w-[135px]"
+        class="w-[104px] md:w-[135px]"
       />
     </HomeRail>
 
@@ -84,7 +125,7 @@ useSeoMeta({ title: 'Pookie' })
         :to="provider.to"
         :tag="provider.tag"
         :tournament="provider.tournament"
-        class="min-w-[180px] flex-1"
+        class="min-w-[150px] flex-1 md:min-w-[180px]"
       />
     </HomeRail>
 
@@ -113,14 +154,14 @@ useSeoMeta({ title: 'Pookie' })
         :image="game.image"
         :badge="game.badge"
         :to="game.to"
-        class="w-[135px]"
+        class="w-[104px] md:w-[135px]"
       />
     </HomeRail>
 
     <HomeRail
       title="Collections"
       show-all-to="/collections"
-      row-class="justify-[safe_center] gap-m"
+      row-class="justify-center-safe gap-m"
     >
       <template #icon>
         <img
@@ -156,7 +197,7 @@ useSeoMeta({ title: 'Pookie' })
         :image="game.image"
         :badge="game.badge"
         :to="game.to"
-        class="w-[135px]"
+        class="w-[104px] md:w-[135px]"
       />
     </HomeRail>
 
@@ -177,22 +218,23 @@ useSeoMeta({ title: 'Pookie' })
         :image="game.image"
         :badge="game.badge"
         :to="game.to"
-        class="w-[135px]"
+        class="w-[104px] md:w-[135px]"
       />
     </HomeRail>
 
     <section
       aria-label="Wins"
-      class="flex flex-col gap-xs rounded-surface-large bg-surface-solid-s2 p-m"
+      class="flex flex-col gap-xs rounded-surface-large bg-surface-solid-s2 p-xs md:p-m"
     >
       <div
         role="tablist"
-        class="flex gap-2xs self-start rounded-[12px] bg-tab-bar-background-default p-2xs"
+        class="flex gap-2xs rounded-[12px] bg-tab-bar-background-default p-2xs md:self-start"
       >
         <UiTab
           v-for="tab in winsTabs"
           :key="tab.id"
           :active="winsTab === tab.id"
+          class="max-md:flex-1"
           @click="winsTab = tab.id"
         >
           {{ tab.label }}

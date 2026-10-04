@@ -12,7 +12,33 @@ const games = (prefix: string, count: number, badge?: string): Game[] =>
     to: `/games/${prefix}-${i + 1}`,
   }))
 
+const cover = '/placeholders/cover.svg'
+
 export default defineEventHandler(() => HomeFeedSchema.parse({
+  ticker: ['$5.01', '$32.50', '$17.16', '$5.05', '$50.00', '$5.01', '$32.50', '$17.16', '$5.05', '$50.00'].map((amount, i) => ({
+    id: `ticker-${i + 1}`,
+    user: 'sdf*@gmail.co',
+    amount,
+    image: cover,
+    to: `/games/popular-${i + 1}`,
+  })),
+  promo: {
+    title: 'Bonus Store',
+    text: 'Spend coins on free spins and boosts',
+    image: '/banners/bonus-store.jpg',
+    action: 'Open store',
+    to: '/store',
+  },
+  stories: ['News', 'Top Win', 'Promo', 'New Release', 'New Release'].map((label, i) => ({
+    id: `story-${i + 1}`,
+    label,
+    image: cover,
+    to: `/stories/${i + 1}`,
+  })),
+  categories: [
+    { id: 'slots', title: 'Slots', count: '4 000+ games', action: 'Play', to: '/slots', tone: 'twilight', art: [cover, cover, cover] },
+    { id: 'live', title: 'Live Casino', count: '300+ live tables', action: 'Play', to: '/live', tone: 'ocean', art: [cover, cover, cover] },
+  ],
   popular: games('popular', 10),
   top10: games('top', 10),
   providers: [

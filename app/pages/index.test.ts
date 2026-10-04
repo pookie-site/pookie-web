@@ -6,6 +6,10 @@ import Index from './index.vue'
 
 const game = (id: string) => ({ id, title: `Game ${id}`, image: '/x.svg', to: `/games/${id}` })
 const feed: HomeFeed = {
+  ticker: [],
+  promo: { title: 'Bonus Store', text: 't', image: '/x.jpg', action: 'Open store', to: '/store' },
+  stories: [],
+  categories: [],
   popular: [game('p1')],
   top10: [game('t1')],
   providers: [],
@@ -18,12 +22,14 @@ const feed: HomeFeed = {
 const winRow = (tab: string) => ({ id: tab, provider: 'P', game: `Win ${tab}`, image: '/x.svg', user: 'u', bet: '1 $', multiplier: '2X', payout: '2 $', win: true })
 
 registerEndpoint('/api/home', () => feed)
+registerEndpoint('/api/session', () => ({ player: null }))
 registerEndpoint('/api/wins', event => [winRow(new URL(event.node.req.url!, 'http://x').searchParams.get('tab')!)])
 
 describe('home page', () => {
   it('renders the feed and refetches wins when the tab changes', async () => {
     const wrapper = await mountSuspended(Index)
     expect(wrapper.text()).toContain('Popular')
+    expect(wrapper.text()).toContain('Join Now & Get Bonus')
     expect(wrapper.text()).toContain('Win now')
 
     await wrapper.findAll('[role="tab"]').find(tab => tab.text() === 'Win Last Week')!.trigger('click')
