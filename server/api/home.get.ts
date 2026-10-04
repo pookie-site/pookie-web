@@ -52,8 +52,8 @@ export default defineEventHandler(() => HomeFeedSchema.parse({
     title: 'Hot & Cold',
     cover: '/placeholders/banner.svg',
     tabs: [
-      { label: 'High RTP', games: games('rtp', 10) },
-      { label: 'High Volatility', games: games('volatility', 10) },
+      { label: 'High RTP', games: games('rtp', 24) },
+      { label: 'High Volatility', games: games('volatility', 24) },
     ],
   },
   newReleases: games('new', 10, 'New'),
