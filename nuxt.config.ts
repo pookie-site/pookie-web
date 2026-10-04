@@ -17,7 +17,7 @@ export default defineNuxtConfig({
   // reach them through custom properties, which the module does not scan.
   fonts: {
     families: [
-      { name: 'Catamaran', provider: 'google', weights: [400, 700] },
+      { name: 'Catamaran', provider: 'google', weights: [400, 700, 800] },
       { name: 'Hind Madurai', provider: 'google', weights: [400, 500, 600] },
       { name: 'Ubuntu', provider: 'google', weights: [700] },
     ],
